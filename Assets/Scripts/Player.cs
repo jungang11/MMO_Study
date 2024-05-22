@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-
-    void Start()
+    void Awake()
     {
-        
+        Managers mg = Managers.Instance;
     }
 
     void Update()
     {
-        transform.Rotate(new Vector3(1.0f, 1.0f, 1.0f));
+
     }
 }
