@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,17 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 10.0f;
 
-    private void Awake()
+    private void OnEnable()
     {
-        Managers mg = Managers.Instance;
+        Managers.Input.KeyAction -= OnKeyBoard;
+        Managers.Input.KeyAction += OnKeyBoard;
     }
 
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
+    private void OnKeyBoard()
     {
         if(Input.GetKey(KeyCode.W))
         {
