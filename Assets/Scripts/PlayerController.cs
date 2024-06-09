@@ -1,15 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
+
+class Tank
+{
+    public float speed = 10.0f;
+}
+
+class FastTank : Tank
+{
+    
+}
+
+class Player
+{
+
+}
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 10.0f;
 
-    private void OnEnable()
+    private void Start()
     {
         Managers.Input.KeyAction -= OnKeyBoard;
         Managers.Input.KeyAction += OnKeyBoard;

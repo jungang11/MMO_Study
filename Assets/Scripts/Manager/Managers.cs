@@ -9,7 +9,9 @@ public class Managers : MonoBehaviour
     public static Managers Instance { get { return s_instance; } }   // 유일한 매니저를 갖고옴
 
     InputManager _input = new InputManager();
+    ResourceManager _resource = new ResourceManager();
     public static InputManager Input { get { return Instance._input;}}
+    public static ResourceManager Resource { get { return Instance._resource;}}
 
     private void Awake()
     {
